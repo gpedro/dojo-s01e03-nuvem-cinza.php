@@ -35,6 +35,7 @@ class NuvemTest extends PHPUnit_Framework_TestCase
 		$actualMap = $nuvem->getActualMap();
 
 		$this->assertEquals($mapaFinal, $actualMap);
+		$this->assertEquals(3, $nuvem->getDaysElapsed());
 	}
 
 }

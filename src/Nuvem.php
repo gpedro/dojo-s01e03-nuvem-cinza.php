@@ -5,12 +5,17 @@ namespace App;
 class Nuvem {
 
 	private $map;
-	private $daysElapsed = 0;
+	private $daysElapsed = 1;
 
 	public function __construct($mapInitial)
 	{
 		$this->map = $mapInitial;
 		$this->mapInitial = $mapInitial;
+	}
+
+	public function getDaysElapsed()
+	{
+		return $this->daysElapsed;
 	}
 
 	public function getActualMap()
