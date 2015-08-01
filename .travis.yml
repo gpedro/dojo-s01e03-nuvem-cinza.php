@@ -8,9 +8,12 @@ php:
   - 5.6
   - hhvm
 
+before_script:
+  - echo "extension = xdebug.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
 install:
   - composer install --dev
 
 after_script:
-  - phpunit --coverage-clover ./build/logs/clover.xml
-  - php ./vendor/bin/test-reporter -vvv
+  - phpunit --coverage-clover build/logs/clover.xml
+  - php vendor/bin/test-reporter
