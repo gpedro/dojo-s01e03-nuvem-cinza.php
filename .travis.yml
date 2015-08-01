@@ -6,4 +6,8 @@ php:
   - hhvm
 
 install:
-  - composer install
+  - composer install --dev
+
+after_script:
+  - phpunit --coverage-clover build/logs/clover.xml
+  - php composer/bin/test-reporter
